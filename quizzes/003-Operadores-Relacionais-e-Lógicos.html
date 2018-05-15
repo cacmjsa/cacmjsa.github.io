@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>003 Operadores Relacionais e Lógicos</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 4, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 695272, "assessment_type": "multiple-choice", "created": "2015-10-04T20:08:45Z", "prompt": {"question": "<p>Supondo o seguinte teste:  \" 5 == 6 \", qual seria o resultado?</p>", "relatedLectureIds": ["3744098"], "feedbacks": ["", ""], "answers": ["True", "False"]}, "correct_response": ["b"], "score": 1.0, "updated": "2015-12-08T21:21:40Z", "old_assessment_type": null, "question_plain": "Supondo o seguinte teste:  \" 5 == 6 \", qual seria o resultado?", "related_lectures": [{"_class": "lecture", "id": 3744098, "title": "Operadores Relacionais e L\u00f3gicos", "created": "2015-10-04T19:27:30Z", "asset": {"_class": "asset", "id": 4285910, "asset_type": "Video", "title": "operadores_relacionais_logicos_HIGH_QUALITY.mp4", "created": "2015-10-05T14:58:43Z"}, "object_index": 27, "url": "/curso-completo-do-desenvolvedor-android/learn/v4/t/lecture/3744098"}]}, {"_class": "assessment", "id": 695288, "assessment_type": "multiple-choice", "created": "2015-10-04T20:11:08Z", "prompt": {"question": "<p>Supondo o seguinte teste utilizando operadores relacionais e l\u00f3gico \" resultado = 1==1 &amp;&amp; 2 != 3 \", que valor ter\u00edamos na vari\u00e1vel \"resultado\"?<br></p>", "relatedLectureIds": "", "feedbacks": ["", "", ""], "answers": ["Verdadeiro", "Falso", "Erro"]}, "correct_response": ["a"], "score": 1.0, "updated": "2015-10-04T20:11:08Z", "old_assessment_type": null, "question_plain": "Supondo o seguinte teste utilizando operadores relacionais e l\u00f3gico \" resultado = 1==1 &amp;&amp; 2 != 3 \", que valor ter\u00edamos na vari\u00e1vel \"resultado\"?", "related_lectures": []}, {"_class": "assessment", "id": 695296, "assessment_type": "multiple-choice", "created": "2015-10-04T20:12:58Z", "prompt": {"question": "<p>Supondo o seguinte teste utilizando operador relacional e l\u00f3gico:  \" resultado = 1 &gt;= 1 || 2 &lt; 2 \", que valor ter\u00edamos na vari\u00e1vel \"resultado\"?</p>", "relatedLectureIds": "", "feedbacks": ["", "", ""], "answers": ["Verdadeiro", "Falso", "Erro"]}, "correct_response": ["a"], "score": 1.0, "updated": "2015-10-04T20:12:58Z", "old_assessment_type": null, "question_plain": "Supondo o seguinte teste utilizando operador relacional e l\u00f3gico:  \" resultado = 1 &gt;= 1 || 2 &lt; 2 \", que valor ter\u00edamos na vari\u00e1vel \"resultado\"?", "related_lectures": []}, {"_class": "assessment", "id": 695298, "assessment_type": "multiple-choice", "created": "2015-10-04T20:15:44Z", "prompt": {"question": "<p>Em java o sinal \"=\" \u00e9 o mesmo que o sinal \"==\" ?<br></p>", "relatedLectureIds": "", "answers": ["True", "False"]}, "correct_response": ["b"], "score": 1.0, "updated": "2015-10-04T20:15:44Z", "old_assessment_type": null, "question_plain": "Em java o sinal \"=\" \u00e9 o mesmo que o sinal \"==\" ?", "related_lectures": []}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>

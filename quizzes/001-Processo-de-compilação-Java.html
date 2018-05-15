@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>001 Processo de compilação Java</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 3, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 692230, "assessment_type": "multiple-choice", "created": "2015-10-02T23:14:30Z", "prompt": {"feedbacks": ["", "", "", ""], "answers": ["Bitcoin", "Bit", "Bytecode", "Byte"], "relatedLectureIds": ["3720368"], "question": "<p>Depois do processo de compila\u00e7\u00e3o, o c\u00f3digo fonte gerado que ser\u00e1 utilizado pela JVM(Java Virtual Machine) \u00e9:<br></p>"}, "correct_response": ["c"], "score": 1.0, "updated": "2015-10-02T23:15:15Z", "old_assessment_type": null, "question_plain": "Depois do processo de compila\u00e7\u00e3o, o c\u00f3digo fonte gerado que ser\u00e1 utilizado pela JVM(Java Virtual Machine) \u00e9:", "related_lectures": [{"_class": "lecture", "id": 3720368, "title": "Processo de compila\u00e7\u00e3o Java", "created": "2015-09-30T21:01:26Z", "asset": {"_class": "asset", "id": 4288474, "asset_type": "Video", "title": "processo_compilacao_java_QUALITY.mp4", "created": "2015-10-05T20:18:45Z"}, "object_index": 22, "url": "/curso-completo-do-desenvolvedor-android/learn/v4/t/lecture/3720368"}]}, {"_class": "assessment", "id": 692228, "assessment_type": "multiple-choice", "created": "2015-10-02T23:11:36Z", "prompt": {"feedbacks": ["", "", ""], "answers": ["Bytecode - C\u00f3digo Java - Compilador", "C\u00f3digo Java - Compilador - Bytecode", "Compilador  - C\u00f3digo Java - Bytecode"], "relatedLectureIds": ["3720368"], "question": "<p>Qual a ordem para compila\u00e7\u00e3o dos c\u00f3digos escritos em Java?<br></p>"}, "correct_response": ["b"], "score": 1.0, "updated": "2015-10-02T23:15:15Z", "old_assessment_type": null, "question_plain": "Qual a ordem para compila\u00e7\u00e3o dos c\u00f3digos escritos em Java?", "related_lectures": [{"_class": "lecture", "id": 3720368, "title": "Processo de compila\u00e7\u00e3o Java", "created": "2015-09-30T21:01:26Z", "asset": {"_class": "asset", "id": 4288474, "asset_type": "Video", "title": "processo_compilacao_java_QUALITY.mp4", "created": "2015-10-05T20:18:45Z"}, "object_index": 22, "url": "/curso-completo-do-desenvolvedor-android/learn/v4/t/lecture/3720368"}]}, {"_class": "assessment", "id": 692232, "assessment_type": "multiple-choice", "created": "2015-10-02T23:16:16Z", "prompt": {"feedbacks": ["", "", "", ""], "question": "<p>Java \u00e9 uma linguagem de programa\u00e7\u00e3o:<br></p>", "relatedLectureIds": ["3720368"], "answers": ["Interpretada", "Compilada", "Executada", "Nova"]}, "correct_response": ["b"], "score": 1.0, "updated": "2015-10-02T23:16:16Z", "old_assessment_type": null, "question_plain": "Java \u00e9 uma linguagem de programa\u00e7\u00e3o:", "related_lectures": [{"_class": "lecture", "id": 3720368, "title": "Processo de compila\u00e7\u00e3o Java", "created": "2015-09-30T21:01:26Z", "asset": {"_class": "asset", "id": 4288474, "asset_type": "Video", "title": "processo_compilacao_java_QUALITY.mp4", "created": "2015-10-05T20:18:45Z"}, "object_index": 22, "url": "/curso-completo-do-desenvolvedor-android/learn/v4/t/lecture/3720368"}]}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>
